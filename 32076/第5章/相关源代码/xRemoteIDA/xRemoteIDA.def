@@ -1,0 +1,9 @@
+
+
+DESCRIPTION 'IDA plugin module'
+
+EXPORTS
+;#pe-
+            PLUGIN @1
+;#pe*
+            

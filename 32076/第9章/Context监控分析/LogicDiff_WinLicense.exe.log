@@ -1,0 +1,78 @@
+WinLicense - Professional Software Protection and Licensing Management  [Version 2.3.2.0]
+
+Project: fish32_black1
+Software: fish32_white
+InputFileName: LogicDiff_WinLicense.exe
+
+------------------
+Protection Options
+------------------
+
+Macros Information
+------------------
+VM Macros: 1
+ENCRYPT Macros: 0
+CLEAR Macros: 0
+MUTATE Macros: 0
+STR_ENCRYPT Macros: 0
+RegisteredVM Macros: 0
+CHECK_PROTECTION Macros: 0
+CHECK_CODE_INTEGRITY Macros: 0
+CHECK_REGISTRATION Macros: 0
+CHECK_VIRTUAL_PC Macros: 0
+
+
+Protection Options
+------------------
+Anti-Debugger: Disabled
+Anti-Dumpers: DISABLED
+Entry Point Obfuscation: DISABLED
+Taggant added: DISABLED
+Resource Encryption: ENABLED
+VMWare compatible: ENABLED
+API-Wrapping Level: Disable
+Anti-Patching: None
+Memory Guard: DISABLED
+When Debugger Found: Display Message
+Application compression: DISABLED
+Resources compression: DISABLED
+SecureEngine compression: DISABLED
+Anti-File Monitor: DISABLED
+Anti-Registry Monitor: DISABLED
+Anti-Sandbox tools: DISABLED
+Delphi/BCB form protection: DISABLED
+Ring-0 Protection: DISABLED
+
+
+Virtual Machine Settings
+------------------------
+Automatic handling of Virtual Machines: DISABLED
+Force Integrity Checks: DISABLED
+Virtualize Protection Core with: CISC32 (deprecated)
+Virtualize old VM macros: FISH32 (White)
+Virtual Machines Inserted: 
+--> CISC32 (deprecated)
+--> FISH32 (White)
+
+
+Advanced Protection Options
+---------------------------
+Encrypt Application: DISABLED
+DLL plugin: DISABLED
+Export Generators: ENABLED
+Keep Trial Running: DISABLED
+Hide from PE scanners: Type 3
+.NET assemblies: ENABLED
+Active Context: DISABLED
+Custom Event: 
+Add Manifest: Don't add manifest
+Launch Application: 
+
+
+XBundler files
+--------------
+No files to bundle
+
+
+SecureEngine Config
+-------------------

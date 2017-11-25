@@ -1,0 +1,612 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Bochs Developers Guide</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="NEXT"
+TITLE="Resources for developers"
+HREF="c17.html"></HEAD
+><BODY
+CLASS="BOOK"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="BOOK"
+><A
+NAME="AEN1"
+></A
+><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="TITLE"
+><A
+NAME="AEN2"
+>Bochs Developers Guide</A
+></H1
+><H3
+CLASS="AUTHOR"
+><A
+NAME="AEN5"
+></A
+>Kevin Lawton</H3
+><H3
+CLASS="AUTHOR"
+><A
+NAME="AEN8"
+></A
+>Bryce Denney</H3
+><H3
+CLASS="AUTHOR"
+><A
+NAME="AEN11"
+></A
+>Christophe Bothamy</H3
+><H4
+CLASS="EDITEDBY"
+>Edited by</H4
+><H3
+CLASS="EDITOR"
+>Michael Calabrese</H3
+><HR></DIV
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+>1. <A
+HREF="c17.html"
+>Resources for developers</A
+></DT
+><DD
+><DL
+><DT
+>1.1. <A
+HREF="c17.html#SVN-WRITE-ACCESS-SETUP"
+>Setting up SVN write access</A
+></DT
+><DT
+>1.2. <A
+HREF="x26.html"
+>Using SVN write access</A
+></DT
+><DD
+><DL
+><DT
+>1.2.1. <A
+HREF="x26.html#AEN28"
+>Checking in files</A
+></DT
+><DT
+>1.2.2. <A
+HREF="x26.html#AEN41"
+>Creating a backup of the SVN repository</A
+></DT
+><DT
+>1.2.3. <A
+HREF="x26.html#AEN47"
+>Setting SVN commit notifications</A
+></DT
+></DL
+></DD
+><DT
+>1.3. <A
+HREF="x56.html"
+>Ideas for other sections</A
+></DT
+></DL
+></DD
+><DT
+>2. <A
+HREF="c60.html"
+>About the code</A
+></DT
+><DD
+><DL
+><DT
+>2.1. <A
+HREF="c60.html#CODE-OVERVIEW"
+>Overview</A
+></DT
+><DT
+>2.2. <A
+HREF="x94.html"
+>Directory Structure</A
+></DT
+><DT
+>2.3. <A
+HREF="x186.html"
+>Emulator Objects</A
+></DT
+><DD
+><DL
+><DT
+>2.3.1. <A
+HREF="x186.html#AEN188"
+>Weird macros and other mysteries</A
+></DT
+><DT
+>2.3.2. <A
+HREF="x186.html#STATIC-METHODS-HACK"
+>Static methods hack</A
+></DT
+><DT
+>2.3.3. <A
+HREF="x186.html#CPU-MEM-OBJECTS"
+>CPU und memory objects in UP/SMP configurations</A
+></DT
+><DT
+>2.3.4. <A
+HREF="x186.html#CONFIG-PARAMETER-TREE"
+>The configuration parameter tree</A
+></DT
+><DT
+>2.3.5. <A
+HREF="x186.html#SAVE-RESTORE"
+>The save/restore feature</A
+></DT
+></DL
+></DD
+><DT
+>2.4. <A
+HREF="x275.html"
+>Configure Scripting</A
+></DT
+><DT
+>2.5. <A
+HREF="x308.html"
+>Log Functions</A
+></DT
+><DD
+><DL
+><DT
+>2.5.1. <A
+HREF="x308.html#AEN314"
+>Methods</A
+></DT
+></DL
+></DD
+><DT
+>2.6. <A
+HREF="x360.html"
+>Internal timers</A
+></DT
+><DD
+><DL
+><DT
+>2.6.1. <A
+HREF="x360.html#AEN362"
+>Overview</A
+></DT
+><DT
+>2.6.2. <A
+HREF="x360.html#AEN390"
+>Timer definitions, members and methods</A
+></DT
+><DT
+>2.6.3. <A
+HREF="x360.html#AEN400"
+>Detailed functional description</A
+></DT
+></DL
+></DD
+><DT
+>2.7. <A
+HREF="x424.html"
+>Bochs's CMOS map</A
+></DT
+><DT
+>2.8. <A
+HREF="x429.html"
+>Sound Blaster 16 Emulation</A
+></DT
+><DD
+><DL
+><DT
+>2.8.1. <A
+HREF="x429.html#AEN435"
+>How well does it work?</A
+></DT
+><DT
+>2.8.2. <A
+HREF="x429.html#AEN441"
+>Output to a sound card</A
+></DT
+><DT
+>2.8.3. <A
+HREF="x429.html#AEN450"
+>Configuring Bochs</A
+></DT
+><DT
+>2.8.4. <A
+HREF="x429.html#AEN463"
+>Runtime configuration</A
+></DT
+></DL
+></DD
+><DT
+>2.9. <A
+HREF="x468.html"
+>The sound lowlevel interface</A
+></DT
+><DD
+><DL
+><DT
+>2.9.1. <A
+HREF="x468.html#AEN476"
+>Files</A
+></DT
+><DT
+>2.9.2. <A
+HREF="x468.html#AEN493"
+>Defines and strutures</A
+></DT
+><DT
+>2.9.3. <A
+HREF="x468.html#AEN502"
+>Classes</A
+></DT
+><DT
+>2.9.4. <A
+HREF="x468.html#AEN530"
+>The base class <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>bx_sound_lowlevel_c</I
+></SPAN
+></A
+></DT
+><DT
+>2.9.5. <A
+HREF="x468.html#AEN537"
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>waveout</I
+></SPAN
+> base class <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>bx_soundlow_waveout_c</I
+></SPAN
+></A
+></DT
+><DT
+>2.9.6. <A
+HREF="x468.html#AEN843"
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>wavein</I
+></SPAN
+> base class <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>bx_soundlow_wavein_c</I
+></SPAN
+></A
+></DT
+><DT
+>2.9.7. <A
+HREF="x468.html#AEN895"
+>The <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>midiout</I
+></SPAN
+> base class <SPAN
+CLASS="emphasis"
+><I
+CLASS="EMPHASIS"
+>bx_soundlow_midiout_c</I
+></SPAN
+></A
+></DT
+></DL
+></DD
+><DT
+>2.10. <A
+HREF="x973.html"
+>Harddisk Images based on redologs</A
+></DT
+><DD
+><DL
+><DT
+>2.10.1. <A
+HREF="x973.html#AEN986"
+>Description</A
+></DT
+><DT
+>2.10.2. <A
+HREF="x973.html#AEN995"
+>How redologs works ?</A
+></DT
+><DT
+>2.10.3. <A
+HREF="x973.html#AEN1097"
+>Parameters</A
+></DT
+><DT
+>2.10.4. <A
+HREF="x973.html#AEN1261"
+>Redolog class description</A
+></DT
+><DT
+>2.10.5. <A
+HREF="x973.html#AEN1333"
+>Disk image classes description</A
+></DT
+></DL
+></DD
+><DT
+>2.11. <A
+HREF="x1445.html"
+>How to add keymapping in a GUI client</A
+></DT
+></DL
+></DD
+><DT
+>3. <A
+HREF="c1449.html"
+>Advanced debugger usage</A
+></DT
+><DD
+><DL
+><DT
+>3.1. <A
+HREF="c1449.html#IODEBUG"
+>I/O Interface to Bochs Debugger</A
+></DT
+><DD
+><DL
+><DT
+>3.1.1. <A
+HREF="c1449.html#AEN1458"
+>Commands supported by port 0x8A00</A
+></DT
+><DT
+>3.1.2. <A
+HREF="c1449.html#AEN1466"
+>Access to port 0x8A01 (write-only)</A
+></DT
+><DT
+>3.1.3. <A
+HREF="c1449.html#AEN1470"
+>Sample</A
+></DT
+></DL
+></DD
+><DT
+>3.2. <A
+HREF="x1475.html"
+>The instrumentation feature</A
+></DT
+><DT
+>3.3. <A
+HREF="x1479.html"
+>Bochs debugger internals</A
+></DT
+></DL
+></DD
+><DT
+>4. <A
+HREF="c1483.html"
+>Coding</A
+></DT
+><DD
+><DL
+><DT
+>4.1. <A
+HREF="c1483.html#AEN1485"
+>Coding guidelines</A
+></DT
+><DT
+>4.2. <A
+HREF="x1518.html"
+>Building a Bochs release</A
+></DT
+><DD
+><DL
+><DT
+>4.2.1. <A
+HREF="x1518.html#AEN1520"
+>Preparing source files and SVN</A
+></DT
+><DT
+>4.2.2. <A
+HREF="x1518.html#AEN1530"
+>Anonymous SVN checkout and platform-independent sources</A
+></DT
+><DT
+>4.2.3. <A
+HREF="x1518.html#AEN1534"
+>Building the release on Linux</A
+></DT
+><DT
+>4.2.4. <A
+HREF="x1518.html#AEN1539"
+>Building the release on win32</A
+></DT
+><DT
+>4.2.5. <A
+HREF="x1518.html#AEN1556"
+>Creating a file release and uploading files on SF</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>5. <A
+HREF="c1562.html"
+>Webmastering</A
+></DT
+><DD
+><DL
+><DT
+>5.1. <A
+HREF="c1562.html#PROJECT-WEBSPACE"
+>Bochs project webspace</A
+></DT
+><DT
+>5.2. <A
+HREF="x1623.html"
+>Updating the Bochs website content</A
+></DT
+><DT
+>5.3. <A
+HREF="x1631.html"
+>Updating the SVN snapshot</A
+></DT
+><DT
+>5.4. <A
+HREF="x1639.html"
+>Updating the online documentation</A
+></DT
+><DT
+>5.5. <A
+HREF="x1648.html"
+>other content</A
+></DT
+><DT
+>5.6. <A
+HREF="x1652.html"
+>available tools</A
+></DT
+></DL
+></DD
+></DL
+></DIV
+><DIV
+CLASS="LOT"
+><DL
+CLASS="LOT"
+><DT
+><B
+>List of Tables</B
+></DT
+><DT
+>2-1. <A
+HREF="x94.html#AEN97"
+>Directory structure</A
+></DT
+><DT
+>2-2. <A
+HREF="x186.html#AEN211"
+>Parameter types</A
+></DT
+><DT
+>2-3. <A
+HREF="x186.html#AEN247"
+>Save/restore parameter types</A
+></DT
+><DT
+>2-4. <A
+HREF="x468.html#AEN549"
+>Waveout methods</A
+></DT
+><DT
+>2-5. <A
+HREF="x468.html#AEN677"
+>format bits</A
+></DT
+><DT
+>2-6. <A
+HREF="x468.html#AEN701"
+>codecs</A
+></DT
+><DT
+>2-7. <A
+HREF="x468.html#AEN747"
+>wave output types</A
+></DT
+><DT
+>2-8. <A
+HREF="x973.html#AEN1009"
+>Generic header description</A
+></DT
+><DT
+>2-9. <A
+HREF="x973.html#AEN1051"
+>Redolog specific header description</A
+></DT
+><DT
+>2-10. <A
+HREF="x973.html#AEN1100"
+>How number of entries in the catalog and number of blocks by extents are computed</A
+></DT
+><DT
+>5-1. <A
+HREF="c1562.html#AEN1573"
+>Directory structure</A
+></DT
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c17.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Resources for developers</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

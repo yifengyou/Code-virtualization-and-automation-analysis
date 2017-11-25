@@ -1,0 +1,89 @@
+Mov eax,0x44
+Xor eax,ce
+Add al,30
+Rol al,7
+Add al,bl
+
+->
+35 CE 00 00 00 04 30 C0 C0 07 00 D8 90
+
+CPU Disasm
+Address   Hex dump          Command                                  Comments
+0040AE41    C1C8 1E         ror eax,1E
+0040AE44    05 E8708D4E     add eax,4E8D70E8
+0040AE49    F7D0            not eax
+0040AE4B    31D8            xor eax,ebx
+0040AE4D    0FC8            bswap eax
+->
+C1 C8 1E 05 E8 70 8D 4E F7 D0 31 D8 0F C8
+
+EC5E5B7F
+
+
+CPU Disasm
+Address   Hex dump          Command                                  Comments
+0040B112    2C E0           sub al,0E0
+0040B114    C0C0 07         rol al,7
+0040B117    FEC8            dec al
+0040B119    00D8            add al,bl
+0040B11B    90              nop
+0040B11C    90              nop
+
+
+2C E0 C0 C0 07 FE C8 00 D8 90 90
+
+->40C399
+add al,bl
+dec al
+neg al
+ror al,1
+add bl,al
+
+rol al,1
+neg al
+inc al
+sub al,bl
+--------->
+D0 C0 F6 D8 FE C0 28 D8
+
+
+
+40BB0E->
+add al,bl
+dec al
+neg al
+ror al,1
+
+
+
+
+
+
+
+
+
+->40C4D9
+
+28 B0 2F 00 81 37 E9 43
+->405D00
+87 F5 7F F5 7B 75 82 5D EF 39 
+
+
+0040D576
+
+
+40A506 push vsp->idx:0D
+vpush 8 ->idx:44
+vadd idx:0B
+vpopfd :09
+vpop vsp idx:0E
+setop 0x3B
+pop reg idx:0F
+->main
+35 CE 00 00 00 04 30 C0 C0 07 00 D8 90
+->size4
+C1 C8 1E 05 E8 70 8D 4E F7 D0 31 D8 0F C8
+->offset
+2C E0 C0 C0 07 FE C8 00 D8 90 90
+->
+D0 C0 F6 D8 FE C0 28 D8

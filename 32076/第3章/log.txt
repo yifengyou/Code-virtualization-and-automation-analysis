@@ -1,0 +1,25 @@
+CPU Disasm
+Address   Hex dump          Command                                  Comments
+00D0100B    FF15 E860D000   call dword ptr [<&SecureEngineSDK32.#1>]
+00D01011    8B35 F060D000   mov esi,dword ptr [<&USER32.MessageBoxA>
+00D01017    6A 04           push 4
+00D01019    BF 0878D000     mov edi,offset 00D07808                  ; ASCII "xxx"
+00D0101E    57              push edi
+00D0101F    68 0C78D000     push offset 00D0780C                     ; ASCII "test"
+00D01024    6A 00           push 0
+00D01026    FFD6            call esi
+00D01028    83F8 06         cmp eax,6
+00D0102B    75 0A           jne short 00D01037
+00D0102D    6A 04           push 4
+00D0102F    57              push edi
+00D01030    68 1478D000     push offset 00D07814                     ; ASCII "Case1"
+00D01035    EB 08           jmp short 00D0103F
+00D01037    6A 00           push 0
+00D01039    57              push edi
+00D0103A    68 1C78D000     push offset 00D0781C                     ; ASCII "case2"
+00D0103F    6A 00           push 0
+00D01041    FFD6            call esi
+00D01043    FF15 E460D000   call dword ptr [<&SecureEngineSDK32.#2>]
+Log data, item 1
+  Address =
+  Message = Executed 16996558 instructions.
